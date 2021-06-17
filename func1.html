@@ -29,11 +29,24 @@
         onePlusOne();
 
         function sum(a, b){
-            document.write(a + b + '<br>');
+            document.write(a + b + '</div><br>');
+        }
+
+        function sumColorRed(a, b){
+            document.write('<div style="color:red">' + (a + b) + '</div><br>');
         }
         sum(2,3);
+        sumColorRed(3,4);
         sum(3,4);
     </script>
     <h2>return</h2>
+    <script>
+        function sum2(a,b) {
+            return a+b;
+        }
+        document.write(sum2(2,3)+'<br>');
+        document.write('<div style="color:red">' + sum2(2,3)+'</div>');
+        document.write('<div style="font-size:3rem;">'+sum2(2,3)+'</div>');
+    </script>
 </body>
 </html>
