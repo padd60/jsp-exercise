@@ -8,16 +8,28 @@
 </head>
 <body data-mode="day">
     <h1>WEB</h1>
-    <input type="button" value="night" onclick="
-    document.querySelector('body').style.background = 'black';
-    document.querySelector('body').style.color = 'white';
-    ">
-    
-    <input type="button" value="day" onclick="
-    document.querySelector('body').style.background = 'white';
-    document.querySelector('body').style.color = 'black';
+
+    <input id="night_day" type="button" value="night" onclick="
+    const target = document.querySelector('body');
+    if (this.value === 'night'){
+    target.style.background = 'black';
+    target.style.color = 'white';
+    this.value = 'day';
+    } else {
+    target.style.background = 'white';
+    target.style.color = 'black';
+    this.value = 'night';
+    }
     ">
 
+    <ol>
+        <li><a href="#">good!</a></li>
+        <li><a href="#">bad!</a></li>
+        <li><a href="#">soso!</a></li>
+    </ol>
+
     <p>부스트코스 연습이당!</p>
+
+
 </body>
 </html>
