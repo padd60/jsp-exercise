@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Object</h1>
+    <h2>Create</h2>
+    <script>
+      const coworkers = {
+        programmer: "kim",
+        designer: "jung",
+      };
+      document.write("programmer : " + coworkers.programmer + "<br>");
+      document.write("designer : " + coworkers.designer + "<br>");
+      coworkers.bookkeeper = "hwan";
+      document.write("bookkeeper : " + coworkers.bookkeeper + "<br>");
+      coworkers["data scientist"] = "nam";
+      document.write(
+        "data scientist : " + coworkers["data scientist"] + "<br>"
+      );
+
+      const countries = {};
+      countries.asia = "korea";
+      countries.europe = "england";
+      document.write(
+        "object add : " + countries.asia + ", " + countries.europe
+      );
+    </script>
+    <h2>Iterate</h2>
+    <script>
+      for (let key in coworkers) {
+        document.write(key + " : " + coworkers[key] + "<br>");
+      }
+    </script>
+    <br />
+    <script>
+      for (let key in countries) {
+        document.write(key + " : " + countries[key] + "<br>");
+      }
+    </script>
+
+    <h2>Property & Method</h2>
+    <script>
+      coworkers.showAll = function () {
+        for (let key in this) {
+          document.write(key + " : " + this[key] + "<br>");
+        }
+      };
+      coworkers.showAll();
+    </script>
+    <script>
+      coworkers.printProgrammer = function () {
+        for (let key in coworkers) {
+          if (key === "programmer") {
+            document.write(key + " : " + this[key] + "<br>");
+          } else {
+            document.write("sorry you are not programmer" + "<br>");
+          }
+        }
+      };
+      coworkers.printProgrammer();
+    </script>
+  </body>
+</html>

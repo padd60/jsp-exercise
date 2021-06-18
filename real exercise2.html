@@ -1,57 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>javascript</title>
 
     <script>
-    function nightdayhandler(self){
-    const target = document.querySelector('body');
-    if (self.value === 'night'){
-    target.style.background = 'black';
-    target.style.color = 'white';
-    self.value = 'day';
+      let Links = {
+        setColor: function (color) {
+          const alist = document.querySelectorAll("a");
+          let i = 0;
+          while (i < alist.length) {
+            alist[i].style.color = color;
+            i = i + 1;
+          }
+        },
+      };
+      let Body = {
+        setColor: function (color) {
+          document.querySelector("body").style.color = color;
+        },
+        setBackGroundColor: function (color) {
+          document.querySelector("body").style.backgroundColor = color;
+        },
+      };
+      function nightdayhandler(self) {
+        const target = document.querySelector("body");
+        if (self.value === "night") {
+          Body.setColor("black");
+          Body.setBackGroundColor("white");
+          self.value = "day";
 
-    const alist = document.querySelectorAll('a');
-    let i = 0;
-    while(i < alist.length){
-        alist[i].style.color = 'powderblue';
-        i = i + 1;
-    }
-    } else {
-    target.style.background = 'white';
-    target.style.color = 'black';
-    self.value = 'night';
+          Links.setColor("blue");
+        } else {
+          Body.setColor("white");
+          Body.setBackGroundColor("black");
+          self.value = "night";
 
-    const alist = document.querySelectorAll('a');
-    let i = 0;
-    while(i < alist.length){
-        alist[i].style.color = 'blue';
-        i = i + 1;
-    }
-    }
-    }
+          Links.setColor("powderblue");
+        }
+      }
     </script>
-
-</head>
-<body>
+  </head>
+  <body>
     <h1><a href="#">WEB</a></h1>
     <input
-
-    <input id="night_day" type="button" value="night" onclick="
+      id="night_day"
+      type="button"
+      value="night"
+      onclick="
     nightdayhandler(this);
-    ">
-
+    "
+    />
     <ol>
-        <li><a href="#">good!</a></li>
-        <li><a href="#">bad!</a></li>
-        <li><a href="#">soso!</a></li>
+      <li><a href="#">good!</a></li>
+      <li><a href="#">bad!</a></li>
+      <li><a href="#">soso!</a></li>
     </ol>
 
     <p>부스트코스 연습이당!</p>
-
-
-</body>
+  </body>
 </html>
